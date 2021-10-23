@@ -1,1 +1,2 @@
-console.log('Hello World')
+export { default } from './parser'
+export * from './parser'
