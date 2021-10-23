@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/Michal99Zajac/editor-parser#readme",
   "devDependencies": {
+    "@types/react-html-parser": "^2.0.2",
     "@typescript-eslint/eslint-plugin": "^5.1.0",
     "@typescript-eslint/parser": "^5.1.0",
     "eslint": "^8.1.0",
