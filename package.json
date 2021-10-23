@@ -1,0 +1,27 @@
+{
+  "name": "editor-parser",
+  "version": "1.0.0",
+  "description": "Parser for converting text code to text code in html",
+  "main": "dist/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Michal99Zajac/editor-parser.git"
+  },
+  "keywords": [],
+  "author": "Michal Zajac",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Michal99Zajac/editor-parser/issues"
+  },
+  "homepage": "https://github.com/Michal99Zajac/editor-parser#readme",
+  "devDependencies": {
+    "typescript": "^4.4.4"
+  }
+}
