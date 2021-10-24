@@ -8,7 +8,11 @@
     "dist/**/*"
   ],
   "scripts": {
-    "build": "tsc",
+    "clean": "rm -rf ./dist",
+    "scss2css": "node-sass ./src/styles/scss -o ./src/styles/css",
+    "scss2css:watch": "node-sass --watch ./src/styles/scss -o ./src/styles/css",
+    "copy-styles": "yarn scss2css && cp -r ./src/styles/ ./dist/styles",
+    "build": "yarn clean && tsc && yarn copy-styles",
     "prepare": "yarn build"
   },
   "lint-staged": {
@@ -34,6 +38,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "husky": "^7.0.4",
     "lint-staged": "^11.2.3",
+    "node-sass": "^6.0.1",
     "prettier": "^2.4.1",
     "typescript": "^4.4.4"
   },
