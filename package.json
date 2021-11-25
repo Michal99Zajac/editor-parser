@@ -4,11 +4,16 @@
   "description": "Parser for converting text code to text code in html",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "private": true,
   "files": [
-    "dist/**/*"
+    "dist",
+    "README.md",
+    "src"
   ],
   "scripts": {
+    "sandpit": "ts-node src/sandpit.ts",
     "build": "tsc",
+    "husky": "husky install",
     "prepare": "yarn build"
   },
   "lint-staged": {

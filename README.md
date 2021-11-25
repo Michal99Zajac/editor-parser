@@ -3,7 +3,7 @@ Parser for converting text code to text code in html
 
 ### Example
 
-text in text input: 
+text in text input:
 
 ```
 export function hello(what: string): void {
