@@ -4,15 +4,20 @@
   "description": "Parser for converting text code to text code in html",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "private": true,
   "files": [
-    "dist/**/*"
+    "dist",
+    "README.md",
+    "src"
   ],
   "scripts": {
+    "sandpit": "ts-node src/sandpit.ts",
+    "build": "tsc",
+    "husky": "husky install",
     "clean": "rm -rf ./dist",
     "scss2css": "node-sass ./src/styles/scss -o ./src/styles/css",
     "scss2css:watch": "node-sass --watch ./src/styles/scss -o ./src/styles/css",
     "copy-styles": "yarn scss2css && cp -r ./src/styles/ ./dist/styles",
-    "build": "yarn clean && tsc && yarn copy-styles",
     "prepare": "yarn build"
   },
   "lint-staged": {
@@ -44,6 +49,7 @@
   },
   "dependencies": {
     "@types/domhandler": "^2.4.2",
-    "react-html-parser": "^2.0.2"
+    "react-html-parser": "^2.0.2",
+    "ts-node": "^10.4.0"
   }
 }
