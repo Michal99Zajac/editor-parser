@@ -109,7 +109,7 @@ export const toJavascriptHTML: StrategyFn = (code: string) => {
     },
   ])
 
-  return result
+  return `<pre>${result}</pre>`
 }
 
 export default toJavascriptHTML
