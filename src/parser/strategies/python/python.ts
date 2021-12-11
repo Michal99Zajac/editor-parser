@@ -6,25 +6,18 @@ export const toPythonHTML: StrategyFn = (code: string) => {
   const result = rgxReplace(code, [
     // STRINGS
     {
-      regex: pr.doubleString.regex,
-      replacer: `<span class="${pr.doubleString.className}">$<${pr.doubleString.var}></span>`,
-    },
-    {
-      regex: pr.singleString.regex,
-      replacer: `<span class="${pr.singleString.className}">$<${pr.singleString.var}></span>`,
-    },
-    {
-      regex: pr.docString.regex,
-      replacer: `<span class="${pr.docString.className}">$<${pr.docString.var}></span>`,
-    },
-    {
-      regex: pr.fString.regex,
+      regex: pr.string.regex,
       replacer: (...args: any) => {
-        const { fstr } = args[args.length - 1]
-        const f = fstr.slice(0, 1)
-        const str = fstr.slice(1)
+        const { str } = args[args.length - 1]
 
-        return `<span class="${pr.fString.className.f}">${f}</span><span class="${pr.fString.className.fstring}">${str}</span>`
+        if (str.charAt(0) === 'f') {
+          const f = str.slice(0, 1)
+          const content = str.slice(1)
+
+          return `<span class="${pr.string.className.f}">${f}</span><span class="${pr.string.className.fstring}">${content}</span>`
+        } else {
+          return `<span class="${pr.string.className.string}">${str}</span>`
+        }
       },
     },
     {
@@ -37,6 +30,11 @@ export const toPythonHTML: StrategyFn = (code: string) => {
 
         return `<span class="${pr.fStringBrace.className.border}"><span class="${pr.fStringBrace.className.brace}">${start}</span>${content}<span class="${pr.fStringBrace.className.brace}">${end}</span></span>`
       },
+    },
+    // COMMENTS
+    {
+      regex: pr.comment.regex,
+      replacer: `<span class="${pr.comment.className}">$<${pr.comment.var}></span>`,
     },
     // FLEX RULES
     {
@@ -60,10 +58,11 @@ export const toPythonHTML: StrategyFn = (code: string) => {
       replacer: `<span class="${pr.classDeclaration.className}">$<${pr.classDeclaration.var}></span>`,
     },
     {
-      regex: pr.functionDeclarationVariable.regex,
-      replacer: `<span class="${pr.functionDeclarationVariable.className}">$<${pr.functionDeclarationVariable.var}></span>`,
+      regex: pr.decorator.regex,
+      replacer: `<span class="${pr.decorator.className}">$<${pr.decorator.var}></span>`,
     },
     {
+      // !important [above functionExecution]
       regex: pr.functionDeclaration.regex,
       replacer: `<span class="${pr.functionDeclaration.className}">$<${pr.functionDeclaration.var}></span>`,
     },

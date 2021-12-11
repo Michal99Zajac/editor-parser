@@ -1,33 +1,15 @@
 export const pythonRules = {
-  doubleString: {
-    name: 'double string',
-    className: 'dstring',
-    regex: new RegExp(
-      /(?<dstr>(?<=\s|^|\(|,|=)"[\w\s]+"(?=\s|$|\)|,|:)|(?<=\s|^|\(|,|=)""(?=\s|$|\)|,|:))/,
-      'g'
-    ),
-    var: 'dstr',
-  },
-  singleString: {
-    name: 'single string',
-    className: 'sstring',
-    regex: new RegExp(/(?<sstr>(?<!f)'(.*?)')/, 'g'),
-    var: 'sstr',
-  },
-  docString: {
-    name: 'docstring',
-    className: 'docstring',
-    regex: new RegExp(/(?<docstr>"""[^"]?(.*?)""")/, 'gs'),
-    var: 'docstr',
-  },
-  fString: {
+  // STRINGS
+  string: {
+    // fstring, doubleString, singleString
     name: 'fstring',
     className: {
-      fstring: 'fstring',
+      string: 'string',
       f: 'purple',
+      fstring: 'fstring',
     },
-    regex: new RegExp(/(?<fstr>f"(.*?)"|f'(.*?)')/, 'g'),
-    var: 'fstr',
+    regex: new RegExp(/(?<str>f?"(.*?)"|f?'(.*?)')/, 'g'),
+    var: 'str',
   },
   fStringBrace: {
     name: 'fstring braces',
@@ -36,11 +18,19 @@ export const pythonRules = {
       border: 'brace',
     },
     regex: new RegExp(
-      /(?<brace>(?<=<span class="fstring">"[\w\s]+){(.*?)}(?="<\/span>))/,
+      /(?<brace>(?<=<span class="fstring">["'][\w\s\W]*){(.*?)}(?=[\w\s\W]*["']<\/span>))/,
       'g'
     ),
     var: 'brace',
   },
+  // COMMENTS
+  comment: {
+    name: 'comment',
+    className: 'comment',
+    regex: new RegExp(/(?<comment>#.*)/, 'g'),
+    var: 'comment',
+  },
+  // RESERVED
   def: {
     name: 'def',
     className: 'purple',
@@ -92,7 +82,7 @@ export const pythonRules = {
   lambda: {
     name: 'lambda',
     className: 'purple',
-    regex: new RegExp(/(?<lambda>(?<=^|\s)lambda(?=$|\s))/, 'g'),
+    regex: new RegExp(/(?<lambda>(?<=^|\s)lambda(?=$|[\s:]))/, 'g'),
     var: 'lambda',
   },
   pass: {
@@ -110,19 +100,19 @@ export const pythonRules = {
   false: {
     name: 'false',
     className: 'purple',
-    regex: new RegExp(/(?<false>(?<=^|\s|=)False(?=$|\s|:))/, 'g'),
+    regex: new RegExp(/(?<false>(?<=^|[\W\s])False(?=$|[\W\s]))/, 'g'),
     var: 'false',
   },
   none: {
     name: 'none',
     className: 'purple',
-    regex: new RegExp(/(?<none>(?<=^|\s|=)None(?=$|\s|:))/, 'g'),
+    regex: new RegExp(/(?<none>(?<=^|[\s\W])None(?=$|[\W\s]))/, 'g'),
     var: 'none',
   },
   true: {
     name: 'true',
     className: 'yellow',
-    regex: new RegExp(/(?<true>(?<=^|\s|=)True(?=$|\s|:))/, 'g'),
+    regex: new RegExp(/(?<true>(?<=^|[\s\W])True(?=$|[\s\W]))/, 'g'),
     var: 'true',
   },
   as: {
@@ -205,13 +195,13 @@ export const pythonRules = {
   },
   raise: {
     name: 'raise',
-    className: 'puprle',
+    className: 'purple',
     regex: new RegExp(/(?<raise>(?<=^|\s)raise(?=$|\s))/, 'g'),
     var: 'raise',
   },
   while: {
     name: 'while',
-    className: 'puprle',
+    className: 'purple',
     regex: new RegExp(/(?<while>(?<=^|\s)while(?=$|\s))/, 'g'),
     var: 'while',
   },
@@ -233,22 +223,23 @@ export const pythonRules = {
     regex: new RegExp(/(?<import>(?<=^|\s)import(?=$|\s))/, 'g'),
     var: 'import',
   },
+  // FLEX
   functionDeclaration: {
-    name: 'function declaraion',
+    name: 'function declaration',
     className: 'blue',
-    regex: new RegExp(/(?<fd>(?<=(\s|^)def\s+)\w+(?=\([\w\s,/<>"=]*\)))/, 'gs'),
+    regex: new RegExp(/(?<fd>(?<=def\s+)\w+(?=\s*\())/, 'g'),
     var: 'fd',
   },
   functionExecution: {
     name: 'function execution',
     className: 'cyan',
-    regex: new RegExp(/(?<fe>(?<!def\s+\w*)\w+(?=\(["'\w\s,</>={}]*\)))/, 'gs'),
+    regex: new RegExp(/(?<fe>(?<=[\s;]*)\w+(?=\([\W\w\s]*\)))/, 'gs'),
     var: 'fe',
   },
   number: {
     name: 'numbers',
     className: 'orange',
-    regex: new RegExp(/(?<number>(?<=^|\s|=|\()\d+(?=$|\s|,|\)|:))/, 'g'),
+    regex: new RegExp(/(?<number>(?<=^|[\s\W])\d+(?=$|[\s\W]))/, 'g'),
     var: 'number',
   },
   fromDeclarration: {
@@ -281,20 +272,21 @@ export const pythonRules = {
     regex: new RegExp(/(?<cc>(?<=\.)\w+(?=\.)|(?<=\.)\w+(?!\w*\())/, 'g'),
     var: 'cc',
   },
+  decorator: {
+    name: 'decorator',
+    className: 'decorator',
+    regex: new RegExp(/(?<decorator>(?<=$|\s*)@\w+)/, 'g'),
+    var: 'decorator',
+  },
+  // OTHER
   other: {
     name: 'other words',
     className: 'fuchsia',
     regex: new RegExp(
-      /(?<other>(?<=\s|span>|\(|,)\w+(?=\s|$|:|<span|\)|,)|(?<!span\s\w*)\w+(?==))/,
+      /(?<other>(?<!(class=".*">(\w)*)|(<\/?(\w)*)|(class="(\w)*)|(<span\s\w*))\w+)/,
       'g'
     ),
     var: 'other',
-  },
-  functionDeclarationVariable: {
-    name: 'variables in function declarattion',
-    className: 'orange',
-    regex: new RegExp(/(?<fdv>(?<=def\s*\w+\([,\s\w]*)\w+(?=[\s\w,)=]))/, 'gs'),
-    var: 'fdv',
   },
 }
 
