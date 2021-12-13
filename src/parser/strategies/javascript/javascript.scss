@@ -1,0 +1,296 @@
+// VARIABLES
+$javascript-string-color: #2d7a00 !default;
+$javascript-in-string-brace-color: #a724e4 !default;
+$javascript-comment-color: #555555 !default;
+$javascript-import-declaration-color: #ffe600 !default;
+$javascript-chain-start-color: #ffe600 !default;
+$javascript-chain-continue-color: #e45937 !default;
+$javascript-function-execution-color: #467cf1 !default;
+$javascript-function-declaration-color: #467cf1 !default;
+$javascript-number-color: #ffa600 !default;
+$javascript-break-color: #a724e4 !default;
+$javascript-debugger-color: #a724e4 !default;
+$javascript-export-color: #a724e4 !default;
+$javascript-finally-color: #a724e4 !default;
+$javascript-in-color: #a724e4 !default;
+$javascript-let-color: #a724e4 !default;
+$javascript-null-color: #ffe600 !default;
+$javascript-public-color: #a724e4 !default;
+$javascript-super-color: #a724e4 !default;
+$javascript-throw-color: #a724e4 !default;
+$javascript-try-color: #a724e4 !default;
+$javascript-arguments-color: #a724e4 !default;
+$javascript-class-color: #a724e4 !default;
+$javascript-default-color: #a724e4 !default;
+$javascript-else-color: #a724e4 !default;
+$javascript-extends-color: #a724e4 !default;
+$javascript-if-color: #a724e4 !default;
+$javascript-return-color: #a724e4 !default;
+$javascript-switch-color: #a724e4 !default;
+$javascript-typeof-color: #a724e4 !default;
+$javascript-while-color: #a724e4 !default;
+$javascript-await-color: #a724e4 !default;
+$javascript-case-color: #a724e4 !default;
+$javascript-const-color: #a724e4 !default;
+$javascript-delete-color: #a724e4 !default;
+$javascript-false-color: #ffe600 !default;
+$javascript-for-color: #a724e4 !default;
+$javascript-implements-color: #a724e4 !default;
+$javascript-private-color: #a724e4 !default;
+$javascript-var-color: #a724e4 !default;
+$javascript-with-color: #a724e4 !default;
+$javascript-boolean-color: #ffe600 !default;
+$javascript-catch-color: #a724e4 !default;
+$javascript-continue-color: #a724e4 !default;
+$javascript-do-color: #a724e4 !default;
+$javascript-undefined-color: #a724e4 !default;
+$javascript-function-color: #a724e4 !default;
+$javascript-import-color: #a724e4 !default;
+$javascript-interface-color: #a724e4 !default;
+$javascript-new-color: #a724e4 !default;
+$javascript-protected-color: #a724e4 !default;
+$javascript-static-color: #a724e4 !default;
+$javascript-this-color: #467cf1 !default;
+$javascript-true-color: #ffe600 !default;
+$javascript-void-color: #a724e4 !default;
+$javascript-as-color: #a724e4 !default;
+$javascript-from-color: #a724e4 !default;
+$javascript-variable-color: #ffe600 !default;
+$javascript-async-color: #a724e4 !default;
+
+// CLASSES
+.javascript-string > *, .javascript-string {
+  color: $javascript-string-color !important
+}
+
+.javascript-format-string > .javascript-in-string-border {
+  color: initial !important
+}
+
+.javascript-in-string-brace {
+  color: $javascript-in-string-brace-color
+}
+
+.javascript-import-declaration {
+  color: $javascript-import-declaration-color
+}
+
+.javascript-chain-start {
+  color: $javascript-chain-start-color
+}
+
+.javascript-chain-continue {
+  color: $javascript-chain-continue-color
+}
+
+.javascript-function-execution {
+  color: $javascript-function-execution-color
+}
+
+.javascript-function-declaration {
+  color: $javascript-function-declaration-color
+}
+
+.javascript-number {
+  color: $javascript-number-color
+}
+
+.javascript-break {
+  color: $javascript-break-color
+}
+
+.javascript-debugger {
+  color: $javascript-debugger-color
+}
+
+.javascript-export {
+  color: $javascript-export-color
+}
+
+.javascript-finally {
+  color: $javascript-finally-color
+}
+
+.javascript-in {
+  color: $javascript-in-color
+}
+
+.javascript-let {
+  color: $javascript-let-color
+}
+
+.javascript-null {
+  color: $javascript-null-color
+}
+
+.javascript-public {
+  color: $javascript-public-color
+}
+
+.javascript-super {
+  color: $javascript-super-color
+}
+
+.javascript-undefined {
+  color: $javascript-undefined-color
+}
+
+.javascript-throw {
+  color: $javascript-throw-color
+}
+
+.javascript-try {
+  color: $javascript-try-color
+}
+
+.javascript-arguments {
+  color: $javascript-arguments-color
+}
+
+.javascript-class {
+  color: $javascript-class-color
+}
+
+.javascript-default {
+  color: $javascript-default-color
+}
+
+.javascript-else {
+  color: $javascript-else-color
+}
+
+.javascript-extends {
+  color: $javascript-extends-color
+}
+
+.javascript-if {
+  color: $javascript-if-color
+}
+
+.javascript-return {
+  color: $javascript-return-color
+}
+
+.javascript-switch {
+  color: $javascript-switch-color
+}
+
+.javascript-typeof {
+  color: $javascript-typeof-color
+}
+
+.javascript-while {
+  color: $javascript-while-color
+}
+
+.javascript-await {
+  color: $javascript-await-color
+}
+
+.javascript-async {
+  color: $javascript-async-color
+}
+
+.javascript-case {
+  color: $javascript-case-color
+}
+
+.javascript-const {
+  color: $javascript-const-color
+}
+
+.javascript-delete {
+  color: $javascript-delete-color
+}
+
+.javascript-false {
+  color: $javascript-false-color
+}
+
+.javascript-for {
+  color: $javascript-for-color
+}
+
+.javascript-implements {
+  color: $javascript-implements-color
+}
+
+.javascript-private {
+  color: $javascript-private-color
+}
+
+.javascript-var {
+  color: $javascript-var-color
+}
+
+.javascript-with {
+  color: $javascript-with-color
+}
+
+.javascript-boolean {
+  color: $javascript-boolean-color
+}
+
+.javascript-catch {
+  color: $javascript-catch-color
+}
+
+.javascript-continue {
+  color: $javascript-continue-color
+}
+
+.javascript-do {
+  color: $javascript-do-color
+}
+
+.javascript-function {
+  color: $javascript-function-color
+}
+
+.javascript-import {
+  color: $javascript-import-color
+}
+
+.javascript-interface {
+  color: $javascript-interface-color
+}
+
+.javascript-new {
+  color: $javascript-new-color
+}
+
+.javascript-protected {
+  color: $javascript-protected-color
+}
+
+.javascript-static {
+  color: $javascript-static-color
+}
+
+.javascript-this {
+  color: $javascript-this-color
+}
+
+.javascript-true {
+  color: $javascript-true-color
+}
+
+.javascript-void {
+  color: $javascript-void-color
+}
+
+.javascript-as {
+  color: $javascript-as-color
+}
+
+.javascript-from {
+  color: $javascript-from-color
+}
+
+.javascript-variable {
+  color: $javascript-variable-color
+}
+
+.javascript-comment, .javascript-comment * {
+  color: $javascript-comment-color !important
+}

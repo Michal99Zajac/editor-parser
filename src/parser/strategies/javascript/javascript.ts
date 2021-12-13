@@ -165,6 +165,10 @@ export const toJavascriptHTML: StrategyFn = (code: string) => {
       replacer: `<span class="${jr.await.className}">$<${jr.await.var}></span>`,
     },
     {
+      regex: jr.async.regex,
+      replacer: `<span class="${jr.async.className}">$<${jr.async.var}></span>`,
+    },
+    {
       regex: jr.case.regex,
       replacer: `<span class="${jr.case.className}">$<${jr.case.var}></span>`,
     },
@@ -241,6 +245,10 @@ export const toJavascriptHTML: StrategyFn = (code: string) => {
       replacer: `<span class="${jr.static.className}">$<${jr.static.var}></span>`,
     },
     {
+      regex: jr.undefined.regex,
+      replacer: `<span class="${jr.undefined.className}">$<${jr.undefined.var}></span>`,
+    },
+    {
       regex: jr.this.regex,
       replacer: `<span class="${jr.this.className}">$<${jr.this.var}></span>`,
     },
@@ -260,10 +268,10 @@ export const toJavascriptHTML: StrategyFn = (code: string) => {
       regex: jr.from.regex,
       replacer: `<span class="${jr.from.className}">$<${jr.from.var}></span>`,
     },
-    // OTHER
+    // VARIABLE
     {
-      regex: jr.other.regex,
-      replacer: `<span class="${jr.other.className}">$<${jr.other.var}></span>`,
+      regex: jr.variable.regex,
+      replacer: `<span class="${jr.variable.className}">$<${jr.variable.var}></span>`,
     },
   ])
 

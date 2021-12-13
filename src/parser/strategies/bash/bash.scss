@@ -1,0 +1,116 @@
+// VARIABLES
+$bash-string-color: #2d7a00 !default;
+$bash-comment-color: #555555 !default;
+$bash-echo-color: #21b9df !default;
+$bash-read-color: #21b9df !default;
+$bash-if-color: #8900c9 !default;
+$bash-elif-color: #8900c9 !default;
+$bash-else-color: #8900c9 !default;
+$bash-then-color: #8900c9 !default;
+$bash-fi-color: #8900c9 !default;
+$bash-case-color: #8900c9 !default;
+$bash-in-color: #8900c9 !default;
+$bash-esac-color: #8900c9 !default;
+$bash-for-color: #8900c9 !default;
+$bash-do-color: #8900c9 !default;
+$bash-done-color: #8900c9 !default;
+$bash-while-color: #8900c9 !default;
+$bash-function-color: #8900c9 !default;
+$bash-variable-color: #e45937 !default;
+$bash-function-declaration-color: #467cf1 !default;
+$bash-variable-execution-color: #7dc26f !default;
+$bash-execution-color: #7dc26f !default;
+$bash-variable-declaration: #dbb300 !default;
+
+// CLASSES
+.bash-string > *, .bash-string {
+  color: $bash-string-color !important
+}
+
+.bash-variable {
+  color: $bash-variable-color !important
+}
+
+.bash-echo {
+  color: $bash-echo-color
+}
+
+.bash-read {
+  color: $bash-read-color
+}
+
+.bash-if {
+  color: $bash-if-color
+}
+
+.bash-elif {
+  color: $bash-elif-color
+}
+
+.bash-else {
+  color: $bash-else-color
+}
+
+.bash-then {
+  color: $bash-then-color
+}
+
+.bash-fi {
+  color: $bash-fi-color
+}
+
+.bash-case {
+  color: $bash-case-color
+}
+
+.bash-in {
+  color: $bash-in-color
+}
+
+.bash-esac {
+  color: $bash-esac-color
+}
+
+.bash-for {
+  color: $bash-for-color
+}
+
+.bash-do {
+  color: $bash-do-color
+}
+
+.bash-done {
+  color: $bash-done-color
+}
+
+.bash-while {
+  color: $bash-while-color
+}
+
+.bash-function {
+  color: $bash-function-color
+}
+
+.bash-function-declaration {
+  color: $bash-function-declaration-color
+}
+
+.bash-for-variable {
+  color: $bash-variable-color
+}
+
+.bash-variable-execution {
+  color: $bash-variable-execution-color
+}
+
+.bash-execution {
+  color: $bash-execution-color
+}
+
+.bash-variable-declaration {
+  color: $bash-variable-declaration
+}
+
+.bash-comment *, .bash-comment {
+  color: $bash-comment-color !important
+}
