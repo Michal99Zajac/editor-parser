@@ -38,8 +38,8 @@ export const toPythonHTML: StrategyFn = (code: string) => {
     },
     // FLEX RULES
     {
-      regex: pr.fromDeclarration.regex,
-      replacer: `<span class="${pr.fromDeclarration.className}">$<${pr.fromDeclarration.var}></span>`,
+      regex: pr.fromDeclaration.regex,
+      replacer: `<span class="${pr.fromDeclaration.className}">$<${pr.fromDeclaration.var}></span>`,
     },
     {
       regex: pr.importDeclarration.regex,
@@ -203,10 +203,10 @@ export const toPythonHTML: StrategyFn = (code: string) => {
       regex: pr.import.regex,
       replacer: `<span class="${pr.import.className}">$<${pr.import.var}></span>`,
     },
-    // OTHER
+    // VARIABLES
     {
-      regex: pr.other.regex,
-      replacer: `<span class="${pr.other.className}">$<${pr.other.var}></span>`,
+      regex: pr.variable.regex,
+      replacer: `<span class="${pr.variable.className}">$<${pr.variable.var}></span>`,
     },
   ])
 

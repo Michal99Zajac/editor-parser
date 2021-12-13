@@ -291,6 +291,6 @@ $javascript-async-color: #a724e4 !default;
   color: $javascript-variable-color
 }
 
-.javascript-comment {
+.javascript-comment, .javascript-comment * {
   color: $javascript-comment-color !important
 }
