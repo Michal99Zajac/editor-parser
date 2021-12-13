@@ -1,0 +1,240 @@
+// VARIABLES
+$python-string-color: #2d7a00 !default;
+$python-fstring-f-color: #a724e4 !default;
+$python-in-string-brace-color: #a724e4 !default;
+$python-comment-color: #555555 !default;
+$python-def-color: #a724e4 !default;
+$python-for-color: #a724e4 !default;
+$python-in-color: #a724e4 !default;
+$python-and-color: #a724e4 !default;
+$python-or-color: #a724e4 !default;
+$python-not-color: #a724e4 !default;
+$python-class-color: #a724e4 !default;
+$python-return-color: #a724e4 !default;
+$python-lambda-color: #a724e4 !default;
+$python-pass-color: #a724e4 !default;
+$python-try-color: #a724e4 !default;
+$python-as-color: #a724e4 !default;
+$python-assert-color: #a724e4 !default;
+$python-break-color: #a724e4 !default;
+$python-continue-color: #a724e4 !default;
+$python-del-color: #a724e4 !default;
+$python-elif-color: #a724e4 !default;
+$python-else-color: #a724e4 !default;
+$python-except-color: #a724e4 !default;
+$python-finally-color: #a724e4 !default;
+$python-from-color: #a724e4 !default;
+$python-global-color: #a724e4 !default;
+$python-if-color: #a724e4 !default;
+$python-is-color: #a724e4 !default;
+$python-raise-color: #a724e4 !default;
+$python-while-color: #a724e4 !default;
+$python-with-color: #a724e4 !default;
+$python-yield-color: #a724e4 !default;
+$python-import-color: #a724e4 !default;
+$python-false-color: #ffe600 !default;
+$python-none-color: #ffe600 !default;
+$python-true-color: #ffe600 !default;
+$python-function-declaration-color: #467cf1 !default;
+$python-function-execution-color: #467cf1 !default;
+$python-number-color: #ffa600 !default;
+$python-from-declaration-color: #ffe600 !default;
+$python-import-declaration-color: #ffe600 !default;
+$python-chain-start-color: #ffe600 !default;
+$python-class-declaration-color: #22d15d !default;
+$python-chain-continue-color: #e45937 !default;
+$python-decorator-color: #18e0e0 !default;
+$python-variable-color: #ffe600 !default;
+
+// CLASSES
+.python-string, .python-string > * {
+  color: $python-string-color !important
+}
+
+.python-fstring, .python-fstring > * {
+  color: $python-string-color !important
+}
+
+.python-fstring > .python-in-string-border {
+  color: initial !important
+}
+
+.python-fstring-f {
+  color: $python-fstring-f-color
+}
+
+.python-in-string-brace {
+  color: $python-in-string-brace-color
+}
+
+.python-def {
+  color: $python-def-color
+}
+
+.python-for {
+  color: $python-for-color
+}
+
+.python-in {
+  color: $python-in-color
+}
+
+.python-and {
+  color: $python-and-color
+}
+
+.python-or {
+  color: $python-or-color
+}
+
+.python-not {
+  color: $python-not-color
+}
+
+.python-class {
+  color: $python-class-color
+}
+
+.python-return {
+  color: $python-return-color
+}
+
+.python-lambda {
+  color: $python-lambda-color
+}
+
+.python-pass {
+  color: $python-pass-color
+}
+
+.python-try {
+  color: $python-try-color
+}
+
+.python-false {
+  color: $python-false-color
+}
+
+.python-none {
+  color: $python-none-color
+}
+
+.python-true {
+  color: $python-true-color
+}
+
+.python-as {
+  color: $python-as-color
+}
+
+.python-assert {
+  color: $python-assert-color
+}
+
+.python-break {
+  color: $python-break-color
+}
+
+.python-continue {
+  color: $python-continue-color
+}
+
+.python-del {
+  color: $python-del-color
+}
+
+.python-elif {
+  color: $python-elif-color
+}
+
+.python-else {
+  color: $python-else-color
+}
+
+.python-except {
+  color: $python-except-color
+}
+
+.python-finally {
+  color: $python-finally-color
+}
+
+.python-from {
+  color: $python-from-color
+}
+
+.python-global {
+  color: $python-global-color
+}
+
+.python-if {
+  color: $python-if-color
+}
+
+.python-is {
+  color: $python-is-color
+}
+
+.python-raise {
+  color: $python-raise-color
+}
+
+.python-while {
+  color: $python-while-color
+}
+
+.python-with {
+  color: $python-with-color
+}
+
+.python-yield {
+  color: $python-yield-color
+}
+
+.python-import {
+  color: $python-import-color
+}
+
+.python-function-declaration {
+  color: $python-function-declaration-color
+}
+
+.python-function-execution {
+  color: $python-function-execution-color
+}
+
+.python-number {
+  color: $python-number-color
+}
+
+.python-from-declaration {
+  color: $python-from-declaration-color
+}
+
+.python-import-declaration {
+  color: $python-import-declaration-color
+}
+
+.python-chain-start {
+  color: $python-chain-start-color
+}
+
+.python-class-declaration {
+  color: $python-class-declaration-color
+}
+
+.python-chain-continue {
+  color: $python-chain-continue-color
+}
+
+.python-decorator {
+  color: $python-decorator-color
+}
+
+.python-variable {
+  color: $python-variable-color
+}
+
+.python-comment, .python-comment * {
+  color: $python-comment-color !important
+}

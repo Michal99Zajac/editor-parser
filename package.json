@@ -1,0 +1,55 @@
+{
+  "name": "@workcode/editor-parser",
+  "version": "1.0.0",
+  "description": "Parser for converting text code to text code in html",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "private": true,
+  "files": [
+    "dist",
+    "README.md",
+    "src"
+  ],
+  "scripts": {
+    "build": "yarn clean && tsc && yarn copy-styles",
+    "husky": "husky install",
+    "clean": "rimraf dist/",
+    "copy-styles": "copyfiles -u 1 src/**/*.scss dist/",
+    "prepare": "yarn build"
+  },
+  "lint-staged": {
+    "./**/*.ts": "prettier --write --ignore-unknown"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Michal99Zajac/editor-parser.git"
+  },
+  "keywords": [],
+  "author": "Michal Zajac",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Michal99Zajac/editor-parser/issues"
+  },
+  "homepage": "https://github.com/Michal99Zajac/editor-parser#readme",
+  "devDependencies": {
+    "@types/react-html-parser": "^2.0.2",
+    "@typescript-eslint/eslint-plugin": "^5.1.0",
+    "@typescript-eslint/parser": "^5.1.0",
+    "copyfiles": "^2.4.1",
+    "eslint": "^8.1.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^11.2.3",
+    "prettier": "^2.4.1",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.4.4"
+  },
+  "dependencies": {
+    "@types/domhandler": "^2.4.2",
+    "react-html-parser": "^2.0.2",
+    "sass": "^1.45.0",
+    "sass-node": "^4.11.2",
+    "ts-node": "^10.4.0"
+  }
+}
